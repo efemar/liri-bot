@@ -10,8 +10,8 @@ var fs = require("fs")
 var moment = require("moment")
 
 var command = process.argv[2];
-var artist = process.argv.slice(3).join("-");
-var movieName = process.argv.slice(3).join("-");
+var artist = process.argv.slice(3).join(" ");
+var movieName = process.argv.slice(3).join(" ");
 
 if (!movieName) {
     movieName = "Mr. Nobody";
@@ -58,7 +58,7 @@ function searchSpotify(songName) {
         .search({ type: 'track', query: songName })
         .then(function (response) {
 
-            console.log(JSON.stringify(response.tracks.items.length))
+            //console.log(JSON.stringify(JSON.stringify(response.tracks.items)))
             //console.log(JSON.stringify(response.tracks.items[0], null, 2))
             //console.log(response.tracks)
             // console.log ("Artist: " + response.tracks.items[0].album.artists[0].name)
@@ -71,6 +71,35 @@ function searchSpotify(songName) {
             // if (response.tracks.items.length === 0) {
             //     songName = "The Sign"
             // }
+
+            for (var i = 0; i < response.tracks.items.length; i++) {
+                printTrack(response.tracks.items[i])
+            }
+
+        })
+        .catch(function (err) {
+            console.log(err);
+        });
+}
+
+function searchSpotifyWhat(songName) {
+    var spotify = new Spotify({
+        id: keys.spotify.id,
+        secret: keys.spotify.secret
+    });
+    spotify
+        .search({ type: 'track', query: songName })
+        .then(function (response) {
+
+            //console.log(JSON.stringify(response.tracks.items))
+            //console.log(JSON.stringify(response.tracks.items[0], null, 2))
+            //console.log(response.tracks)
+            // console.log ("Artist: " + response.tracks.items[0].album.artists[0].name)
+            // console.log("Song: " + songName)
+            // console.log("Url: " + response.tracks.items[0].album.external_urls.spotify)
+            // console.log("Album Name: " + response.tracks.items[0].album.name)
+            // console.log("\n-----------------\n")
+
 
             for (var i = 0; i < response.tracks.items.length; i++) {
                 printTrack(response.tracks.items[i])
@@ -139,7 +168,7 @@ switch (command) {
         axios.get(omdbQuery)
             .then(
                 function (response) {
-                    console.log(JSON.stringify(response.data, null, 2));
+                    //console.log(JSON.stringify(response.data, null, 2));
                     console.log("Title: " + response.data.Title)
                     console.log("Year: " + response.data.Year)
                     console.log("IMBD Rating: " + response.data.imdbRating)
@@ -166,8 +195,8 @@ switch (command) {
             searchSpotify(songName)
         }
 
-    
         break;
+    
 
     case "do-what-it-says":
         //call the random.txt file
@@ -175,10 +204,12 @@ switch (command) {
             if (err) {
                 return console.log(err);
             }
-            data = data.split(", ");
-
-            spotify(data[1]);
-
+            data = data.split(",")
+            //console.log(data);
+            
+            var songName = data[1];
+            searchSpotifyWhat(songName);
+            
 
         })
 }
