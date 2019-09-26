@@ -1,7 +1,5 @@
 # liri-bot
 
-# liri-bot
-
 1. Overview of how this app works and why it was built
 
 This app was built to streamline the searches for movies information, concerts and song information with a few command lines.
@@ -14,25 +12,25 @@ It requires that the user have internet access and terminal installed on their c
 
 3. How to use this app
 
-There are 4 commands that the user can type: <concert-this>, <movie-this>, <spotify-this> <do-what-it-says-to-do> to retrieve data.
+There are 4 commands that the user can type: 'concert-this', 'movie-this', 'spotify-this-song', 'do-what-it-says' to retrieve data.
 
 Example 1:
 
-node liri.js concert-this <name-of-artist>
+node liri.js concert-this 'name-of-artist'
 
 Example 2:
 
-node liri.js movie-this <name-of-movie>
+node liri.js movie-this 'name-of-movie'
 
 Example 3:
 
-node liri.js spotify-this <name-of-song>
+node liri.js spotify-this 'name-of-song'
 
 Example 4:
 
 node liri.js do-what-it-says-to-do
 
-4. Screenshots and video links to how it works
+4. Link to the video of how it works:
 
 
 5. Link to the deployed version of the app
