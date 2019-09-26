@@ -18,17 +18,29 @@ Example 1:
 
 node liri.js concert-this 'name-of-artist'
 
+Result: It will provide a list of concert venues names, locations and dates of the concert
+
 Example 2:
 
 node liri.js movie-this 'name-of-movie'
+
+Result: It will provide the Title, the Year, the IMBD rating, Rotten Tomatoes, the country where is was produced, the languages, the plot and the actors.
+
+When no movie is defined: it will return information about the movie "Mr. Nobody"
 
 Example 3:
 
 node liri.js spotify-this 'name-of-song'
 
+Result: It will display information on Artist and Album for each of the songs with that name.
+
+When no song is specified: It will return information (Album, URL) about the song "The Sign" by Ace of Base
+
 Example 4:
 
-node liri.js do-what-it-says-to-do
+node liri.js do-what-it-says
+
+Result: it reads an external file (random.txt) that contains a command (spotify-this-song) for the song "All Want it that Way". It will display the Album and the Artist for each of the songs found with that name
 
 4. Link to the video of how it works:
 
