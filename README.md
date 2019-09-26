@@ -32,6 +32,7 @@ node liri.js do-what-it-says-to-do
 
 4. Link to the video of how it works:
 
+https://drive.google.com/open?id=1uPQ9oB_cOPSZLZjmon-Kty7kltIjOvAF
 
 5. Link to the deployed version of the app
 
