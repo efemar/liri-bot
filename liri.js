@@ -1,10 +1,5 @@
 
-//TODO: 
-//Loop through Cher's concert dates
-//Create a video or giphy for the commands
 
-
-//TODO: install de dotenv package
 require("dotenv").config();
 
 
@@ -25,15 +20,10 @@ if (!movieName) {
 var songName = process.argv.slice(3).join(" ");
 
 
-
-
 var bandsintownQuery = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
 var omdbQuery = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
 
 
-
-
-//var spotifyQuery = 'All the Small Things'
 
 function searchSpotifyNoTrack() {
 
@@ -45,35 +35,12 @@ function searchSpotifyNoTrack() {
         .search({ type: "track", query: "The Sign" })
         .then(function (response) {
 
-            console.log(response)
-            //console.log(JSON.stringify(response.tracks))
-            //console.log ("Artist: " + response.tracks.items)
-            // console.log("Song: " + songName) 
-            // console.log("Url: " + response.tracks.items[0].album.external_urls.spotify)
-            // console.log("Album Name: " + response.tracks.items[0].album.name)
+            console.log ("Artist: " + "Ace of Base")
+            console.log("Song: " + "The Sign") 
+            console.log("Url: " + response.tracks.items[5].album.external_urls.spotify)
+            console.log("Album Name: " + "Happy Nation")
             // console.log("\n-----------------\n")
 
-
-            // if (response.tracks.items.length === 0) {
-            //     songName = "The Sign"
-            // }
-
-            // for (var i = 0; i < response.tracks.items.length; i++) {
-            //     printTrack(response.tracks.items[i])
-            // }
-
-            // function printTrack() {
-            //     var artist = response.tracks.items[5].album.artists[0].name
-            //     var song = songName
-            //     var spotifyUrl = response.tracks.items[5].album.external_urls.spotify
-            //     var albumName = response.tracks.items[5].album.name
-            //     console.log("Artist: " + artist)
-            //     console.log("Song: " + song)
-            //     console.log("Url: " + spotifyUrl)
-            //     console.log("Album Name: " + albumName)
-            //     console.log("\n-----------------\n")
-            // }
-            // printTrack();
 
         })
         .catch(function (err) {
