@@ -44,4 +44,3 @@ This app was built using javascript and node.js. It requires that the use have i
 7. Contributor
 
 This app was built by Elisa Marques, github: https://github.com/efemar?tab=repositories
-
